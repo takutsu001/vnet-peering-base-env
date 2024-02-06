@@ -117,6 +117,9 @@ resource publicIp 'Microsoft.Network/publicIPAddresses@2022-05-01' = {
   properties: {
     publicIPAllocationMethod: 'Static'
     publicIPAddressVersion: 'IPv4'
+    dnsSettings: {
+      domainNameLabel: hubvmName1
+    }
   }
 }
 
