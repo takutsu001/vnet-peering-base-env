@@ -73,4 +73,4 @@ az logout
 1. 同一サブスクリプションに本Bicepを利用して複数の環境をデプロイする場合は ***hubvmName1*** を環境毎に異なる名前を指定する
 
 2. ***hubEnv.bicep*** の以下の行を削除する (削除することにより、FQDNによる hub の踏み台サーバへのアクセスはできなくなるが、IPアドレスでのアクセスは引き続き可能)
-https://github.com/takutsu001/vnet-peering-base-env/blob/1787ab596d20c58241fc7c631e564bbd75c56bf4/modules/hubEnv.bicep#L120C1-L122C6
+https://github.com/takutsu001/vnet-peering-base-env/blob/1787ab596d20c58241fc7c631e564bbd75c56bf4/modules/hubEnv.bicep#L120-L122
