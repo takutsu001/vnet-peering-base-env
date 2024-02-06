@@ -3,15 +3,15 @@
 ## はじめに
 本 Bicep は VNet Peering 検証環境用 のベース環境を作成するBicepです
 
+## 構成図
+![](/images/vnet-peering-base-topology.png)
+
 > [!NOTE]
 > - オンプレ環境に接続するために VPN Gateway を `Onpre-VNet`, `Hub-VNet` に作成する想定ですが、本 Bicep では VPN Gateway は作成されません（必要となる `GatewaySubnet` は作成されます）
 > - Spoke間の接続を行うためにパケットフォワーダー (Azure Firewall) を `Hub-VNet` に作成する想定ですが、本 Bicep では Azure Firewall は作成されません（必要となる `AzureFirewallSubnet` は作成されます） 
 
 > [!WARNING]
 > 本環境は HUB の踏み台サーバーを経由して Spokeやオンプレ の VM にアクセスするような構成です。NSG で SSH(22) への接続を許可するルールを作成していますが、セキュリティリスクが高いため、あくまでも検証用途としてご利用ください（本来は Azure Bastion や Azure Firewall を利用して踏み台サーバーへアクセスさせるべきですが、費用を下げるため NSG で穴あけを行っています）
-
-## 構成図
-![](/images/vnet-peering-base-topology.png)
 
 ### 前提条件
 ローカルPCでBicepを実行する場合は Azure CLI と Bicep CLI のインストールが必要となります。私はVS Code (Visual Studio Code) を利用してBicepファイルを作成しているのですが、結構使いやすいのでおススメです。以下リンクに VS Code、Azure CLI、Bicep CLI のインストール手順が纏まっています
