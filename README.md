@@ -1,7 +1,7 @@
 # vnet-peering-base-env
 
 ## はじめに
-本 Bicep は [VNet Peering 検証環境用](https://zenn.dev/takutsu/articles/zenn-ampls-instruction) のベース環境を作成するBicepです
+本 Bicep は VNet Peering 検証環境用 のベース環境を作成するBicepです
 
 > [!NOTE]
 > - オンプレ環境に接続するために VPN Gateway を `Onpre-VNet`, `Hub-VNet` に作成する想定ですが、本 Bicep では VPN Gateway は作成されません（必要となる `GatewaySubnet` は作成されます）
