@@ -4,7 +4,7 @@ param resourceGroupName = 'vNetPeering-RG'
 param resourceGroupLocation = 'japaneast'
 // ---- for Firewall Rule ----
 // your ip address for RDP (ex. xxx.xxx.xxx.xxx)
-param myipaddress = '124.37.254.233'
+param myipaddress = '<Public Ip Address>'
 // ---- param for Hub ----
 param hubVNetName = 'Hub-VNet'
 param hubVNetAddress = '10.0.0.0/16'
@@ -35,7 +35,7 @@ param onpreSubnetName1 = 'Onpre-VMSubnet'
 param onpreSubnetAddress1 = '172.16.0.0/24'
 param onpreSubnetName2 = 'GatewaySubnet'
 param onpreSubnetAddress2 = '172.16.200.0/27'
-param onprevmName1 = 'spoke2-centos-01'
+param onprevmName1 = 'onpre-centos-01'
 // ---- Common param for VM ----
 param vmSizeLinux = 'Standard_B1s'
 param adminUserName = 'cloudadmin'
