@@ -9,6 +9,7 @@
 > [!NOTE]
 > - オンプレ環境に接続するために VPN Gateway を `Onpre-VNet`, `Hub-VNet` に作成する想定ですが、本 Bicep では VPN Gateway は作成されません（必要となる `GatewaySubnet` は作成されます）
 > - Spoke間の接続を行うためにパケットフォワーダー (Azure Firewall) を `Hub-VNet` に作成する想定ですが、本 Bicep では Azure Firewall は作成されません（必要となる `AzureFirewallSubnet` は作成されます） 
+> - Spoke間の接続を試す場合は、Azure Firewall の作成と Spoke1 と Spoke2 のサブネットに UDR（0.0.0.0 -> AzureFirewall） を追加する必要があります
 
 > [!WARNING]
 > 本環境は HUB の踏み台サーバーを経由して Spokeやオンプレ の VM にアクセスするような構成です。NSG で SSH(22) への接続を許可するルールを作成していますが、セキュリティリスクが高いため、あくまでも検証用途としてご利用ください（本来は Azure Bastion や Azure Firewall を利用して踏み台サーバーへアクセスさせるべきですが、費用を下げるため NSG で穴あけを行っています）
