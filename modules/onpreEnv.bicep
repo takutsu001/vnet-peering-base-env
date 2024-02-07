@@ -95,19 +95,6 @@ resource onpreVNet 'Microsoft.Network/virtualNetworks@2021-05-01' = {
 }
 
 // create VM in onpreVNet
-// create public ip address for Linux VM
-resource publicIp 'Microsoft.Network/publicIPAddresses@2022-05-01' = {
-  name: '${onprevmName1}-pip'
-  location: location
-  sku: {
-    name: 'Standard'
-  }
-  properties: {
-    publicIPAllocationMethod: 'Static'
-    publicIPAddressVersion: 'IPv4'
-  }
-}
-
 // create network interface for Linux VM
 resource networkInterface 'Microsoft.Network/networkInterfaces@2023-04-01' = {
   name: '${onprevmName1}-nic'
@@ -118,9 +105,6 @@ resource networkInterface 'Microsoft.Network/networkInterfaces@2023-04-01' = {
         name: 'ipconfig1'
         properties: {
           privateIPAllocationMethod: 'Dynamic'
-          publicIPAddress: {
-            id: publicIp.id
-          }
           subnet: {
             id: onpreVNet::onpreVMSubnet.id
           }
