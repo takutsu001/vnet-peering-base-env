@@ -59,6 +59,8 @@ cd <main.bicepを設置したディレクトリ>
 ```
 az deployment sub create --location japaneast -f main.bicep -p main.prod.bicepparam
 ```
+> [!NOTE]
+> コマンドで指定する `--location` はメタデータを格納する場所の指定で、Azure リソースのデプロイ先ではない (メタデータなのでどこでも問題ないが、特に要件がなければAzureリソースと同一の場所を指定するで問題ない) 
 
 #### 4. Azureからのログアウト
 ```
