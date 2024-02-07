@@ -112,7 +112,10 @@ module Spoke1Module './modules/spoke1Env.bicep' = {
     vmSizeLinux: vmSizeLinux
     adminUserName: adminUserName
     adminPassword: adminPassword
-  } 
+  }
+  dependsOn: [
+    HubModule
+  ]
 }
 
 // Create Spoke2 Environment (VM-Linux, VNet, Subnet, NSG, Vnet Peering)
@@ -130,7 +133,10 @@ module Spoke2Module './modules/spoke2Env.bicep' = {
     vmSizeLinux: vmSizeLinux
     adminUserName: adminUserName
     adminPassword: adminPassword
-  } 
+  }
+  dependsOn: [
+    HubModule
+  ]
 }
 
 // Create Onpre Environment (VM-Linux VNet, Subnet, NSG, LAW)
