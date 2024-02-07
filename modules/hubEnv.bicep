@@ -69,7 +69,7 @@ resource nsgDefault 'Microsoft.Network/networkSecurityGroups@2023-04-01' = {
       {
         name: 'Allow-SSH'
         properties: {
-        description: 'RDP access permission from your own PC.'
+        description: 'SSH access permission from your own PC.'
         protocol: 'TCP'
         sourcePortRange: '*'
         destinationPortRange: '22'
