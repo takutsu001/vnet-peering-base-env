@@ -4,7 +4,7 @@ param resourceGroupName = 'vNetPeering-RG'
 param resourceGroupLocation = 'japaneast'
 // ---- for Firewall Rule ----
 // your ip address for SSH (ex. xxx.xxx.xxx.xxx)
-param myipaddress = '<Public Ip Address>'
+param myipaddress = '<Public IP your PC Address>'
 // ---- param for Hub ----
 param hubVNetName = 'Hub-VNet'
 param hubVNetAddress = '10.0.0.0/16'
@@ -37,6 +37,6 @@ param onpreSubnetName2 = 'GatewaySubnet'
 param onpreSubnetAddress2 = '172.16.200.0/27'
 param onprevmName1 = 'onpre-centos-01'
 // ---- Common param for VM ----
-param vmSizeLinux = 'Standard_B1s'
+param vmSizeLinux = 'Standard_B2s'
 param adminUserName = 'cloudadmin'
 param adminPassword = 'msjapan1!msjapan1!'
