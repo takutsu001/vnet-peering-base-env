@@ -20,7 +20,7 @@
 https://learn.microsoft.com/ja-jp/azure/azure-resource-manager/bicep/install
 
 ## 使い方
-本リポジトリーをローカルPCにクローンし、パラメータファイル (main.prod.bicepparam) を修正してご利用ください
+本リポジトリをローカルPCにクローンし、パラメータファイル (main.prod.bicepparam) を修正してご利用ください
 
 **main.prod.bicepparam**
 ![](/images/vnet-peering-base-bicepparam.png)
