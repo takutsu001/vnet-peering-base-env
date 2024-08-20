@@ -62,7 +62,7 @@ resource section
 
 // create network security group for hub vnet
 resource nsgDefault 'Microsoft.Network/networkSecurityGroups@2023-04-01' = {
-  name: 'hub-nsg'
+  name: '${hubVNetName}-nsg'
   location: location
   properties: {
     securityRules: [
