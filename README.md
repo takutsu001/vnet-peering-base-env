@@ -28,6 +28,10 @@ https://learn.microsoft.com/ja-jp/azure/azure-resource-manager/bicep/install
 > [!IMPORTANT]
 > NSGルール作成用の ***myipaddress*** の修正は必須となります。それ以外のパラメータの修正は任意で実施してください。Azureに接続するクライアントのパブリックIPアドレスが分からない場合は[こちらのサイト](https://www.cman.jp/network/support/go_access.cgi)で確認することができます
 
+> [!NOTE]
+> VMをSpot割引で作成したい場合は、main.prod.bicepparam の `useSpot` を `true` にしてください。
+> 本Bicepは割り込み時の挙動が `Deallocate` のため、停止（割当解除）される可能性があります。また、Spotの最大価格は `-1`（オンデマンド価格まで許容）を設定しています。
+
 ※Git を利用できる環境ではない場合はファイルをダウンロードしていただくでも問題ないと思います。その場合は、以下の構成でローカルPCにファイルを設置してください
 
 ```

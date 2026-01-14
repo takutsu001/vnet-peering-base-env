@@ -58,6 +58,9 @@ param adminUserName string
 @secure()
 param adminPassword string
 
+@description('Whether to deploy VMs as Azure Spot VMs')
+param useSpot bool = false
+
 /*
 ------------------
 resource section
@@ -94,6 +97,7 @@ module HubModule './modules/hubEnv.bicep' = {
     vmSizeLinux: vmSizeLinux
     adminUserName: adminUserName
     adminPassword: adminPassword
+    useSpot: useSpot
   } 
 }
 
@@ -112,6 +116,7 @@ module Spoke1Module './modules/spoke1Env.bicep' = {
     vmSizeLinux: vmSizeLinux
     adminUserName: adminUserName
     adminPassword: adminPassword
+    useSpot: useSpot
   }
   dependsOn: [
     HubModule
@@ -133,6 +138,7 @@ module Spoke2Module './modules/spoke2Env.bicep' = {
     vmSizeLinux: vmSizeLinux
     adminUserName: adminUserName
     adminPassword: adminPassword
+    useSpot: useSpot
   }
   dependsOn: [
     HubModule
@@ -155,5 +161,6 @@ module OnpreModule './modules/onpreEnv.bicep' = {
     vmSizeLinux: vmSizeLinux
     adminUserName: adminUserName
     adminPassword: adminPassword
+    useSpot: useSpot
   } 
 }

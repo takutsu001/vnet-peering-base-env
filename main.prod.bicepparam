@@ -38,5 +38,7 @@ param onpreSubnetAddress2 = '172.16.200.0/27'
 param onprevmName1 = 'onpre-centos-01'
 // ---- Common param for VM ----
 param vmSizeLinux = 'Standard_B2s'
+// Set true to deploy VMs as Azure Spot VMs.
+param useSpot = false
 param adminUserName = 'cloudadmin'
 param adminPassword = 'msjapan1!msjapan1!'

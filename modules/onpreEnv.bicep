@@ -19,6 +19,8 @@ param vmSizeLinux string
 param adminUserName string
 @secure()
 param adminPassword string
+@description('Whether to deploy the VM as an Azure Spot VM')
+param useSpot bool = false
 
 /*
 ------------------
@@ -114,6 +116,16 @@ resource networkInterface 'Microsoft.Network/networkInterfaces@2023-04-01' = {
   }
 }
 
+var vmPriorityProps = useSpot ? {
+  priority: 'Spot'
+  evictionPolicy: 'Deallocate'
+  billingProfile: {
+    maxPrice: -1
+  }
+} : {
+  priority: 'Regular'
+}
+
 // create Linux vm in onpre vnet
 resource centosVM1 'Microsoft.Compute/virtualMachines@2023-03-01' = {
   name: onprevmName1
@@ -123,7 +135,7 @@ resource centosVM1 'Microsoft.Compute/virtualMachines@2023-03-01' = {
     publisher: 'cognosys'
     product: 'centos-8-0-free'
   }
-  properties: {
+  properties: union({
     hardwareProfile: {
       vmSize: vmSizeLinux
     }
@@ -160,7 +172,7 @@ resource centosVM1 'Microsoft.Compute/virtualMachines@2023-03-01' = {
         enabled: false
       }
     }
-  }
+  }, vmPriorityProps)
 }
 
 /*
